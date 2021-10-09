@@ -25,8 +25,6 @@ export default function ({ user }) {
     setContent('');
   }
 
-  console.log(user.photoURL);
-
   return (
     <>
       <UserInfo username={user.displayName} avatar={user.photoURL} />
