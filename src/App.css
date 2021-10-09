@@ -91,7 +91,7 @@
 .messages_container > .msg.is_current {
   width: fit-content;
   margin-left: auto;
-  direction: rtl;
+  flex-direction: row-reverse;
 }
 .messages_container > .msg.is_current > span {
   background-color: dodgerblue;
