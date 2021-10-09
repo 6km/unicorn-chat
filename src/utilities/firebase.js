@@ -1,9 +1,7 @@
 import firebase from 'firebase/compat/app'
 import 'firebase/compat/auth'
 import 'firebase/compat/firestore'
-import { getAnalytics } from 'firebase/analytics'
 
-import { Timestamp } from '@firebase/firestore'
 import { useAuthState } from 'react-firebase-hooks/auth'
 
 firebase.initializeApp({
@@ -20,7 +18,7 @@ const LoginWithTwitter = async () => {
             console.log(`Logged in successfully to ${user.displayName}!`);
         })
 
-        .catch((err) => {
+        .catch(() => {
             return console.log('Login failed.');
         })
 }
@@ -32,7 +30,7 @@ const LoginWithGoogle = async () => {
             console.log(`Logged in successfully to ${user.displayName}!`);
         })
 
-        .catch((err) => {
+        .catch(() => {
             return console.log('Login failed.');
         })
 }

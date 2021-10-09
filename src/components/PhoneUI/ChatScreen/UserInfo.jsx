@@ -1,5 +1,5 @@
-import {auth} from '../../../utilities/firebase'
-import { IoExit, IoLogOut, IoPersonRemove, IoRemove } from 'react-icons/io5'
+import { auth } from '../../../utilities/firebase'
+import { IoPersonRemove } from 'react-icons/io5'
 
 export default function (props) {
   return (

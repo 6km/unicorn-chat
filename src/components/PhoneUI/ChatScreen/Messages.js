@@ -1,5 +1,4 @@
 import { auth, firestore } from "../../../utilities/firebase";
-import { useEffect, useState } from 'react';
 import { useCollectionData } from 'react-firebase-hooks/firestore'
 import MessageBody from "./MessageBody";
 

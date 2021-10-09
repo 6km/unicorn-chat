@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { auth, firestore, SendMessage } from "../../../utilities/firebase";
-import { ButtonPrimary } from "../../Buttons";
+import { auth, firestore } from "../../../utilities/firebase";
 import ChatInput from "./ChatInput";
 import Messages from "./Messages";
 import UserInfo from "./UserInfo.jsx";
