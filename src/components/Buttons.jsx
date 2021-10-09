@@ -48,8 +48,28 @@ justify-content: center;
 }
 `
 
+const ButtonGithub = styled.button`
+padding: 10px;
+border-radius: 50%;
+background: black;
+border: none;
+box-shadow: 0px 20px 47px -21px black;
+cursor: pointer;
+transition: .2s all;
+font-weight: 600;
+color: white;
+font-size: 22px;
+display: flex;
+justify-content: center;
+
+&:hover {
+    transform: translateY(-1px);
+}
+`
+
 export {
     ButtonPrimary,
     ButtonTwitter,
     ButtonGoogle,
+    ButtonGithub
 };

@@ -1,6 +1,6 @@
-import { IoLogoGoogle, IoLogoTwitter } from "react-icons/io5";
-import { LoginWithGoogle, LoginWithTwitter } from "../../utilities/firebase";
-import { ButtonGoogle, ButtonTwitter } from "../Buttons";
+import { IoLogoGithub, IoLogoGoogle, IoLogoTwitter } from "react-icons/io5";
+import { LoginWithGithub, LoginWithGoogle, LoginWithTwitter } from "../../utilities/firebase";
+import { ButtonGithub, ButtonGoogle, ButtonTwitter } from "../Buttons";
 
 export default function () {
     return (
@@ -10,6 +10,7 @@ export default function () {
                 <div className="login_methods">
                     <ButtonTwitter onClick={() => LoginWithTwitter()}><IoLogoTwitter /></ButtonTwitter>
                     <ButtonGoogle onClick={() => LoginWithGoogle()}><IoLogoGoogle /></ButtonGoogle>
+                    <ButtonGithub onClick={() => LoginWithGithub()}><IoLogoGithub /></ButtonGithub>
                 </div>
             </div>
         </>

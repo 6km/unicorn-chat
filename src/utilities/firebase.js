@@ -35,6 +35,18 @@ const LoginWithGoogle = async () => {
         })
 }
 
+const LoginWithGithub = async () => {
+    const github_provider = new firebase.auth.GithubAuthProvider();
+    await auth.signInWithPopup(github_provider)
+        .then(({ user }) => {
+            console.log(`Logged in successfully to ${user.displayName}!`);
+        })
+
+        .catch(() => {
+            return console.log('Login failed.');
+        })
+}
+
 
 
 export {
@@ -44,4 +56,5 @@ export {
     useAuthState,
     LoginWithTwitter,
     LoginWithGoogle,
+    LoginWithGithub
 }
