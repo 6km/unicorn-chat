@@ -1,0 +1,15 @@
+{
+  "short_name": "Unicorn",
+  "name": "Unicorn Chat - A simple react chat app",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "256x256",
+      "type": "image/x-icon"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#FFC0CB",
+  "background_color": "#ffffff"
+}
