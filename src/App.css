@@ -30,16 +30,17 @@
 
 /* ChatScreen */
 .in_app {
-  background-color: #1a1d24;
+  background-color: var(--app-bg);
   display: block;
   position: relative;
 }
 .user_info {
-  background: #232730;
+  background: var(--app-userinfo-bg);
   width: 100%;
   height: 3.5em;
   display: flex;
   align-items: center;
+  border-bottom: 1px solid #3b455a38;
   padding: 10px 24px;
 }
 .user_info > img {
@@ -131,7 +132,7 @@
 
 /* Chat Form */
 .chat-form {
-  background: #1a1d24;
+  background: var(--app-bg);
   padding: 15px;
   position: absolute;
   bottom: 0px;

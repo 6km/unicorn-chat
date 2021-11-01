@@ -1,6 +1,6 @@
 import React from 'react';
 import { auth, firestore } from "../../../firebase";
-import { IoClose } from 'react-icons/io5'
+import { IoClose, IoRemove } from 'react-icons/io5'
 
 export default function MessageBody (props) {
   const deleteMessage = () => {

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export default styled.input`
-background: #20242c;
+background: var(--app-chat-input-bg);
 border-radius: 50px;
 border: none;
 padding: 15px;
