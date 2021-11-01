@@ -1,3 +1,4 @@
+import React from 'react';
 import { auth, firestore } from "../../../firebase";
 import { useCollectionData } from 'react-firebase-hooks/firestore'
 import MessageBody from "./MessageBody";

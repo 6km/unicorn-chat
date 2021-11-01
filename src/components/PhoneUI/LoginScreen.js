@@ -1,3 +1,4 @@
+import React from 'react';
 import { IoLogoGithub, IoLogoGoogle, IoLogoTwitter } from "react-icons/io5";
 import { LoginWithGithub, LoginWithGoogle, LoginWithTwitter } from "../../firebase";
 import { ButtonGithub, ButtonGoogle, ButtonTwitter } from "../Buttons";

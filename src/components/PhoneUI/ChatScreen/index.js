@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState } from "react";
 import { auth, firestore } from "../../../firebase";
 import ChatInput from "./ChatInput";

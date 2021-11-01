@@ -1,3 +1,4 @@
+import React from 'react';
 import { auth, useAuthState } from "../../firebase";
 import LoginScreen from "./LoginScreen";
 import ChatScreen from "./ChatScreen/index";

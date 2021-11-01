@@ -1,3 +1,4 @@
+import React from 'react';
 import { auth } from '../../../firebase'
 import { IoPersonRemove } from 'react-icons/io5'
 
