@@ -22,7 +22,7 @@ const LoginWithTwitter = async () => {
     const twitter_provider = new firebase.auth.TwitterAuthProvider();
     await auth.signInWithPopup(twitter_provider)
         .then(({ user }) => {
-            console.log(`Logged in successfully to ${user.displayName}!`);
+            
         })
 
         .catch(() => {
@@ -34,7 +34,7 @@ const LoginWithGoogle = async () => {
     const google_provider = new firebase.auth.GoogleAuthProvider();
     await auth.signInWithPopup(google_provider)
         .then(({ user }) => {
-            console.log(`Logged in successfully to ${user.displayName}!`);
+            
         })
 
         .catch(() => {
@@ -46,7 +46,7 @@ const LoginWithGithub = async () => {
     const github_provider = new firebase.auth.GithubAuthProvider();
     await auth.signInWithPopup(github_provider)
         .then(({ user }) => {
-            console.log(`Logged in successfully to ${user.displayName}!`);
+            
         })
 
         .catch(() => {
