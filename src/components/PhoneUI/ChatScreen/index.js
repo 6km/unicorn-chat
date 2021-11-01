@@ -29,7 +29,7 @@ export default function ChatScreen ({ user }) {
     <>
       <UserInfo username={user.displayName} avatar={user.photoURL} />
       <Messages />
-      <form onSubmit={SendMessage}>
+      <form className="chat-form" onSubmit={SendMessage}>
         <ChatInput placeholder="Send a message now" value={content} autoFocus onChange={onChangeHandler} />
       </form>
     </>

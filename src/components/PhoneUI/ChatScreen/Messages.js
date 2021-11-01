@@ -13,8 +13,8 @@ export default function Messages () {
       {
         data
 
-        ? data.map((msg, msgIdx) => {
-          return <MessageBody id={msg.id} avatar={msg.avatar} content={msg.content} isCurrent={msg.uid === auth.currentUser.uid} key={msgIdx}/>
+        ? data.map((msg) => {
+          return <MessageBody id={msg.id} avatar={msg.avatar} content={msg.content} isCurrent={msg.uid === auth.currentUser.uid} key={msg.id}/>
         })
 
         : 'Loading...'
