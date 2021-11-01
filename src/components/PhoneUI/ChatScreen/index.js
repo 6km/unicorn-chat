@@ -1,5 +1,4 @@
-import React from 'react';
-import { useState } from "react";
+import React, { useState } from 'react';
 import { auth, firestore } from "../../../firebase";
 import ChatInput from "./ChatInput";
 import Messages from "./Messages";
