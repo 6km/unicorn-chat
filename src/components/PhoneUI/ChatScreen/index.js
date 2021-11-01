@@ -15,14 +15,16 @@ export default function ChatScreen ({ user }) {
   const SendMessage = (e) => {
     e.preventDefault();
 
-    firestore.collection("messages").add({
-      uid: auth.currentUser.uid,
-      avatar: auth.currentUser.photoURL,
-      content,
-      createdAt: serverTimestamp()
-    })
+    if (content.trim().length >= 1) {
+      firestore.collection("messages").add({
+        uid: auth.currentUser.uid,
+        avatar: auth.currentUser.photoURL,
+        content,
+        createdAt: serverTimestamp()
+      })
 
-    setContent('');
+      setContent('');
+    }
   }
 
   return (
@@ -30,7 +32,7 @@ export default function ChatScreen ({ user }) {
       <UserInfo username={user.displayName} avatar={user.photoURL} />
       <Messages />
       <form className="chat-form" onSubmit={SendMessage}>
-        <ChatInput placeholder="Send a message now" value={content} autoFocus onChange={onChangeHandler} />
+        <ChatInput autoFocus placeholder="Send a message now" value={content} onChange={onChangeHandler} />
       </form>
     </>
   )

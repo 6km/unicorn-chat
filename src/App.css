@@ -66,15 +66,16 @@
 .messages_container {
   height: 75%;
   overflow: hidden auto;
-  margin: 10px 10px 0 10px;
+  margin-top: 10px;
   padding-bottom: 10px;
 }
 .messages_container > .msg {
-  margin: 10px 0 10px;
+  margin: 0 10px;
   display: flex;
   align-items: flex-end;
   flex-direction: row;
   flex-wrap: nowrap;
+  padding: 10px;
 }
 .messages_container > .msg > span {
   color: white;
@@ -90,12 +91,30 @@
 }
 
 .messages_container > .msg.is_current {
-  width: fit-content;
   margin-left: auto;
   flex-direction: row-reverse;
 }
 .messages_container > .msg.is_current > span {
   background-color: dodgerblue;
+}
+
+.messages_container > .msg > .delete_msg_button {
+  display: none;
+}
+.messages_container > .msg:hover > .delete_msg_button {
+  background: #dc143c42;
+  width: 19px;
+  height: 19px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  align-self: center;
+  margin: 0 10px;
+  transform: translateY(4px);
 }
 
 .messages_container::-webkit-scrollbar {
