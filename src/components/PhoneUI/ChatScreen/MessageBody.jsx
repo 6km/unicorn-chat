@@ -1,8 +1,8 @@
-export default function ({id, avatar, username, content, isCurrent}) {
+export default function MessageBody (props) {
   return (
-    <div role="presentation" className={`msg ${isCurrent ? 'is_current' : ""}`}>
-      {isCurrent || <img src={avatar} alt={id} />}
-      <span>{content}</span>
+    <div role="presentation" className={`msg ${props.isCurrent ? 'is_current' : ""}`}>
+      {props.isCurrent || <img src={props.avatar} alt={props.username} />}
+      <span>{props.content}</span>
     </div>
   )
 }

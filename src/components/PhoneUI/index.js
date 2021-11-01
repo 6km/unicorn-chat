@@ -1,8 +1,8 @@
-import { auth, useAuthState } from "../../utilities/firebase";
+import { auth, useAuthState } from "../../firebase";
 import LoginScreen from "./LoginScreen";
 import ChatScreen from "./ChatScreen/index";
 
-export default function () {
+export default function PhoneUI () {
   const [user] = useAuthState(auth);
 
   return (
