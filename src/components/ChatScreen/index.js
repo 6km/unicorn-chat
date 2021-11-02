@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
-import { auth, firestore } from "../../../firebase";
+import React, { useState, Suspense } from 'react';
 import ChatInput from "./ChatInput";
 import Messages from "./Messages";
 import UserInfo from "./UserInfo.jsx";
+import { auth, firestore } from "../../firebase";
 import { serverTimestamp } from '@firebase/firestore';
+import { IoSend } from 'react-icons/io5'
 
 export default function ChatScreen ({ user }) {
   const [content, setContent] = useState('');
@@ -28,12 +29,13 @@ export default function ChatScreen ({ user }) {
   }
 
   return (
-    <>
+    <Suspense fallback={<h1>loading (chat screen)</h1>}>
       <UserInfo username={user.displayName} avatar={user.photoURL} />
       <Messages />
       <form className="chat-form" onSubmit={SendMessage}>
         <ChatInput autoFocus placeholder="Send a message now" value={content} onChange={onChangeHandler} />
+        <button type="submit" className="send_button"><IoSend /></button>
       </form>
-    </>
+    </Suspense>
   )
 }

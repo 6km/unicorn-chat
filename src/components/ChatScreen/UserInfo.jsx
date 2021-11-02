@@ -1,12 +1,15 @@
 import React from 'react';
-import { auth } from '../../../firebase'
-import { IoPersonRemove, IoClose } from 'react-icons/io5'
+import { auth } from '../../firebase'
+import { IoClose } from 'react-icons/io5'
 
 export default function UserInfo (props) {
   return (
     <div className="user_info">
       <img src={props.avatar} alt={props.username}/>
-      <span>{props.username}</span>
+      <div>
+        <span className="welcome_message">Hello,</span>
+        <span className="username">{props.username}</span>
+      </div>
       <button onClick={() => auth.signOut()} title="Logout"><IoClose /></button>
     </div>
   )

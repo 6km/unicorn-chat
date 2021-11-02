@@ -1,11 +1,33 @@
 import './App.css';
-import PhoneUI from './components/PhoneUI';
-import React from 'react';
+import React, {useEffect, useState} from 'react';
+import { auth, useAuthState } from "./firebase";
+import ChatScreen from "./components/ChatScreen/index";
+import LoginScreen from "./components/LoginScreen";
+import Loading from "./components/Loading";
 
 function App() {
+  const [user] = useAuthState(auth);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(function () {
+      if (typeof user === 'object') {
+        setLoading(false);
+      }
+    }, 740);
+
+  })
+
   return (
     <div className="App">
-      <PhoneUI />
+      <div className={`container ${(!loading && user) && 'in_app'}`}>
+        {
+          loading && <Loading />
+        }
+        {
+          !loading && (user ? <ChatScreen user={user} /> : <LoginScreen />)
+        }
+      </div>
     </div>
   )
 }

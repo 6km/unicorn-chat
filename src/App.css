@@ -8,7 +8,7 @@
 
 /* LoginScreen */
 .container {
-  width: 26em;
+  width: 25em;
   height: 40em;
   display: flex;
   border-radius: 20px;
@@ -33,31 +33,37 @@
   background-color: var(--app-bg);
   display: block;
   position: relative;
+  box-shadow: 0 0 0 3px #0e121b, 0 0 0 6px rgb(120 114 255 / 3%);
 }
 .user_info {
   background: var(--app-userinfo-bg);
-  width: 100%;
+  width: -webkit-fill-available;
   height: 3.5em;
   display: flex;
   align-items: center;
   border-bottom: 1px solid #3b455a38;
-  padding: 10px 24px;
+  padding: 10px 26px;
+  box-shadow: 0px 20px 33px -10px #00000024;
 }
 .user_info > img {
   width: 2.5em;
-  border-radius: 50%;
+  border-radius: 30%;
   margin-right: 1em;
 }
-.user_info > span {
+.user_info > div > .welcome_message {
+  opacity: .5;
+  display: block;
+  font-size: 14px;
+}
+.user_info > div > .username {
   font-weight: 600;
 }
 .user_info > button {
   background: transparent;
   border: none;
-  color: crimson;
+  color: #ff1e67;
   float: right;
   display: inherit;
-  margin-right: 45px;
   margin-left: auto;
   font-size: 22px;
   cursor: pointer;
@@ -67,26 +73,26 @@
 .messages_container {
   height: 75%;
   overflow: hidden auto;
-  margin-top: 10px;
-  padding-bottom: 10px;
+  margin-top: 26px;
+  margin-bottom: 16px;
 }
 .messages_container > .msg {
   display: flex;
   align-items: flex-end;
   flex-direction: row;
   flex-wrap: nowrap;
-  padding: 4.6px 10px;
+  padding: 4.6px 26px;
 }
 .messages_container > .msg > span {
   color: white;
-  border-radius: 18px;
+  border-radius: 12px;
   padding: 6.333px 10px;
-  background-color: #232730;
+  background-color: #283043;
   overflow-wrap: anywhere;
 }
 .messages_container > .msg > img {
   width: 40px;
-  border-radius: 50%;
+  border-radius: 30%;
   margin-right: 6px;
 }
 
@@ -95,11 +101,11 @@
   flex-direction: row-reverse;
 }
 .messages_container > .msg.is_current > span {
-  background-color: dodgerblue;
+  background-color: var(--priamry-color);
 }
 
 .messages_container > .msg > .delete_msg_button {
-  display: none;
+  visibility: hidden;
 }
 .messages_container > .msg:hover > .delete_msg_button {
   background: #dc143c42;
@@ -108,13 +114,16 @@
   border: none;
   color: white;
   cursor: pointer;
+  visibility: visible;
+  border-radius: 6px;
+  place-self: center;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 6px;
-  align-self: center;
-  margin: 0 10px;
-  transform: translateY(4px);
+  margin: 0 10px 0 10px;
+}
+.messages_container > .msg > .delete_msg_button svg {
+  width: 14px;
 }
 
 .messages_container::-webkit-scrollbar {
@@ -133,17 +142,39 @@
 /* Chat Form */
 .chat-form {
   background: var(--app-bg);
-  padding: 15px;
+  padding: 0 15px 15px;
   position: absolute;
   bottom: 0px;
   right: 0;
   left: 0;
-  width: 94%;
+  width: -webkit-fill-available;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
+.chat-form .send_button {
+  position: absolute;
+  right: 27px;
+  background: none;
+  border: none;
+  height: 20px;
+  width: 20px;
+  font-size: 20px;
+  color: #ff1e67;
+  background: #30273c;
+  box-shadow: 0 4px 20px #ff1a6430;
+  cursor: pointer;
+  display: grid;
+  place-content: center;
+  transition: .2s all;
+}
+.chat-form .send_button:hover {
+  border-radius: 10px;
+  background: none;
+  box-shadow: none;
+  transform: scale(.95);
+  outline: none;
+}
 
 
 

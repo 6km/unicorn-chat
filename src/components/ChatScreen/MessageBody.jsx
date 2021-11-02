@@ -1,6 +1,6 @@
 import React from 'react';
-import { auth, firestore } from "../../../firebase";
-import { IoClose, IoRemove } from 'react-icons/io5'
+import { auth, firestore } from "../../firebase";
+import { IoRemove } from 'react-icons/io5'
 
 export default function MessageBody (props) {
   const deleteMessage = () => {
@@ -9,7 +9,9 @@ export default function MessageBody (props) {
 
   return (
     <div role="presentation" className={`msg ${props.isCurrent ? 'is_current' : ""}`}>
-      {props.isCurrent || <img src={props.avatar} alt={props.username} />}
+      {
+        props.isCurrent || <img src={props.avatar} alt={props.username} />
+      }
       <span>{props.content}</span>
       {
         auth.currentUser.uid === process.env.REACT_APP_DEV_UID
@@ -17,7 +19,7 @@ export default function MessageBody (props) {
         <button
           className="delete_msg_button"
           onClick={deleteMessage}>
-          <IoClose />
+          <IoRemove />
         </button>
       }
     </div>
