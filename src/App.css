@@ -58,15 +58,26 @@
 .user_info > div > .username {
   font-weight: 600;
 }
+.user_info > .w-100 {
+  width: -webkit-fill-available;
+}
 .user_info > button {
   background: transparent;
   border: none;
   color: #ff1e67;
   float: right;
   display: inherit;
-  margin-left: auto;
   font-size: 22px;
   cursor: pointer;
+  height: 34px;
+  width: 34px;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+}
+.user_info > button.admin_panel_button {
+  color: white;
+  background: #ff1e674d;
 }
 
 /* Messages Container */

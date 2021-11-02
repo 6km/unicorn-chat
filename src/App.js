@@ -1,7 +1,7 @@
 import './App.css';
 import React, {useEffect, useState} from 'react';
 import { auth, useAuthState } from "./firebase";
-import ChatScreen from "./components/ChatScreen/index";
+import ChatScreen from "./components/ChatScreen";
 import LoginScreen from "./components/LoginScreen";
 import Loading from "./components/Loading";
 
