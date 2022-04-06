@@ -1,3 +1,7 @@
-Take a look at this [live demo](https://unicornchat-app.web.app/)
+<br>
 
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/L3L46IJMK)
+<div align="center">
+  <h3>🦄 Unicorn Chat<h3>
+
+  <a href="https://unicornchat-app.web.app/">View Demo</a>
+</div>
