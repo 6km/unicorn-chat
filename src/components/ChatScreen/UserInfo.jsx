@@ -2,6 +2,7 @@ import React from "react";
 import { IoClose, IoCode, IoLogoGithub } from "react-icons/io5";
 import styled from "styled-components";
 import { auth } from "../../firebase";
+import PropTypes from 'prop-types';
 
 const DevBadge = styled.div`
 background: rgba(255, 255, 255, 0.2);
@@ -15,7 +16,7 @@ align-items: center;
 justify-content: center;
 `
 
-export default function UserInfo({ user: author }) {
+function UserInfo({ user: author }) {
     const isDev = author.uid === process.env.REACT_APP_DEV_UID;
 
     return (
@@ -47,3 +48,13 @@ export default function UserInfo({ user: author }) {
         </div>
     )
 }
+
+UserInfo.propTypes = {
+    user: PropTypes.shape({
+        uid: PropTypes.string,
+        displayName: PropTypes.string,
+        photoURL: PropTypes.string,
+    }).isRequired
+}
+
+export default UserInfo;
