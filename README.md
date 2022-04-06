@@ -6,6 +6,8 @@
   <a href="https://unicornchat-app.web.app/">View Demo</a>
 </div>
 
+<img align="center" width="100%" src="screenshots/screenshot_1.png">
+
 ## About The Project
 This is a simple React chat app.
 
