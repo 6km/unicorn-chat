@@ -138,7 +138,6 @@
     background-color: var(--priamry-color);
 }
 
-
 .messages_container>.msg>.delete_msg_button {
     visibility: hidden;
     opacity: 0.7;
