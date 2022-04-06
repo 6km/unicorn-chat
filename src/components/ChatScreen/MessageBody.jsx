@@ -1,8 +1,9 @@
+import PropTypes from "prop-types";
 import React from "react";
 import { IoRemove } from "react-icons/io5";
 import { auth, firestore } from "../../firebase";
 
-export default function MessageBody({ id, avatar, username, content, isCurrent }) {
+function MessageBody({ id, avatar, username, content, isCurrent }) {
     let authorImageRef = React.createRef();
     const isCurrentUserDev = auth.currentUser.uid === process.env.REACT_APP_DEV_UID;
 
@@ -28,3 +29,13 @@ export default function MessageBody({ id, avatar, username, content, isCurrent }
         </div>
     )
 }
+
+MessageBody.propTypes = {
+    id: PropTypes.string,
+    avatar: PropTypes.string,
+    username: PropTypes.string,
+    content: PropTypes.string,
+    isCurrent: PropTypes.bool
+}
+
+export default MessageBody;
