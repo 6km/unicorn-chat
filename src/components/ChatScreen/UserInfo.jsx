@@ -32,7 +32,7 @@ export default function UserInfo(props) {
                     )}
                 </span>
             </div>
-            <div className="w-100"></div>
+            <div className="w-100" />
             <button
                 onClick={() => window.open("https://github.com/6km/unicorn-chat")}
                 title="Source Code"
