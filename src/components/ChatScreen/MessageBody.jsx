@@ -6,12 +6,12 @@ export default function MessageBody({ id, avatar, username, content, isCurrent }
     let authorImageRef = React.createRef();
     const isCurrentUserDev = auth.currentUser.uid === process.env.REACT_APP_DEV_UID;
 
-    const deleteMessage = () => {
-        firestore.collection("messages").doc(id).delete()
+    function deleteMessage() {
+        firestore.collection("messages").doc(id).delete();
     }
 
-    const onImageNotFound = () => {
-        authorImageRef.current.src = "https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png?20170328184010"
+    function onImageNotFound() {
+        authorImageRef.current.src = "https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png?20170328184010";
     }
 
     return (

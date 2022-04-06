@@ -9,11 +9,11 @@ import UserInfo from "./UserInfo.jsx"
 export default function ChatScreen({ user }) {
     const [content, setContent] = useState("")
 
-    const onInputChangeHandler = (e) => {
+    function onInputChangeHandler(e) {
         setContent(e.target.value)
     }
 
-    const SendMessage = (e) => {
+    function SendMessage(e) {
         e.preventDefault()
 
         if (content.trim().length >= 1) {
