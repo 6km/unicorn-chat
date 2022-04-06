@@ -1,9 +1,9 @@
-import React from "react"
-import { auth } from "../../firebase"
-import { IoClose, IoLogoGithub, IoCode } from "react-icons/io5"
+import React from "react";
+import { IoClose, IoCode, IoLogoGithub } from "react-icons/io5";
 import styled from "styled-components";
+import { auth } from "../../firebase";
 
-var DevBadge = styled.div`
+const DevBadge = styled.div`
 background: rgba(255, 255, 255, 0.2);
 margin: 0;
 border-radius: 6px;
@@ -15,16 +15,16 @@ align-items: center;
 justify-content: center;
 `
 
-export default function UserInfo(props) {
-    var isDev = props.user.uid === process.env.REACT_APP_DEV_UID;
+export default function UserInfo({ user: author }) {
+    const isDev = user.uid === process.env.REACT_APP_DEV_UID;
 
     return (
         <div className="user_info">
-            <img src={props.user.photoURL} alt={props.user.displayName} />
+            <img src={author.photoURL} alt={author.displayName} />
             <div>
                 <span className="welcome_message">Hello,</span>
                 <span className="username" style={{ display: 'flex', alignItems: "center", gap: 6 }}>
-                    {props.user.displayName}
+                    {author.displayName}
                     {isDev && (
                         <DevBadge>
                             <IoCode />
@@ -34,13 +34,14 @@ export default function UserInfo(props) {
             </div>
             <div className="w-100"></div>
             <button
-                onClick={() => window.open("https://github.com/6km/unicorn-chat")}
+                type="button"
                 title="Source Code"
                 className="github_button"
+                onClick={() => window.open("https://github.com/6km/unicorn-chat")}
             >
                 <IoLogoGithub />
             </button>
-            <button onClick={() => auth.signOut()} title="Logout">
+            <button title="Logout" type="button" onClick={() => auth.signOut()} >
                 <IoClose />
             </button>
         </div>

@@ -1,7 +1,7 @@
-import firebase from 'firebase/compat/app'
-import 'firebase/compat/auth'
-import 'firebase/compat/firestore'
-import { useAuthState } from 'react-firebase-hooks/auth'
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
+import 'firebase/compat/firestore';
+import { useAuthState } from 'react-firebase-hooks/auth';
 
 firebase.initializeApp({
     // your app config
@@ -63,4 +63,5 @@ export {
     LoginWithTwitter,
     LoginWithGoogle,
     LoginWithGithub
-}
+};
+

@@ -1,16 +1,16 @@
-import './App.css';
 import React, { useEffect, useState } from 'react';
-import { auth, useAuthState } from "./firebase";
+import './App.css';
 import ChatScreen from "./components/ChatScreen";
-import LoginScreen from "./components/LoginScreen";
 import Loading from "./components/Loading";
+import LoginScreen from "./components/LoginScreen";
+import { auth, useAuthState } from "./firebase";
 
 function App() {
     const [user] = useAuthState(auth);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        setTimeout(function () {
+        setTimeout(() => {
             if (typeof user === 'object') {
                 setLoading(false);
             }

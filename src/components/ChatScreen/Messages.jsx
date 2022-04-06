@@ -1,6 +1,6 @@
 import React, { useEffect } from "react"
-import { auth, firestore } from "../../firebase"
 import { useCollectionData } from "react-firebase-hooks/firestore"
+import { auth, firestore } from "../../firebase"
 import MessageBody from "./MessageBody"
 
 export default function Messages() {

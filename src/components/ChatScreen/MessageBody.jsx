@@ -1,13 +1,13 @@
-import React from "react"
-import { IoRemove } from "react-icons/io5"
-import { auth, firestore } from "../../firebase"
+import React from "react";
+import { IoRemove } from "react-icons/io5";
+import { auth, firestore } from "../../firebase";
 
-export default function MessageBody(props) {
-    var authorImageRef = React.createRef();
-    var isCurrentUserDev = auth.currentUser.uid === process.env.REACT_APP_DEV_UID;
+export default function MessageBody({ id, avatar, username, content, isCurrent }) {
+    let authorImageRef = React.createRef();
+    const isCurrentUserDev = auth.currentUser.uid === process.env.REACT_APP_DEV_UID;
 
     const deleteMessage = () => {
-        firestore.collection("messages").doc(props.id).delete()
+        firestore.collection("messages").doc(id).delete()
     }
 
     const onImageNotFound = () => {
@@ -15,13 +15,13 @@ export default function MessageBody(props) {
     }
 
     return (
-        <div className={`msg ${props.isCurrent ? "is_current" : ""}`}>
+        <div className={`msg ${isCurrent ? "is_current" : ""}`}>
             <div className="author_avatar">
-                {props.isCurrent || <img src={props.avatar} alt={props.username} ref={authorImageRef} onError={onImageNotFound} />}
+                {isCurrent || <img src={avatar} alt={username} ref={authorImageRef} onError={onImageNotFound} />}
             </div>
-            <span>{props.content}</span>
+            <span>{content}</span>
             {isCurrentUserDev && (
-                <button className="delete_msg_button" onClick={deleteMessage}>
+                <button className="delete_msg_button" type="button" onClick={deleteMessage}>
                     <IoRemove />
                 </button>
             )}
