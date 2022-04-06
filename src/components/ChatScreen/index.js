@@ -1,4 +1,5 @@
 import { serverTimestamp } from "firebase/firestore"
+import PropTypes from "prop-types"
 import React, { useState } from "react"
 import { IoSend } from "react-icons/io5"
 import { auth, firestore } from "../../firebase"
@@ -6,7 +7,7 @@ import ChatInput from "./ChatInput"
 import Messages from "./Messages.jsx"
 import UserInfo from "./UserInfo.jsx"
 
-export default function ChatScreen({ user }) {
+function ChatScreen({ user }) {
     const [content, setContent] = useState("")
 
     function onInputChangeHandler(e) {
@@ -46,3 +47,9 @@ export default function ChatScreen({ user }) {
         </>
     )
 }
+
+ChatScreen.propTypes = {
+    user: PropTypes.object.isRequired
+}
+
+export default ChatScreen;
