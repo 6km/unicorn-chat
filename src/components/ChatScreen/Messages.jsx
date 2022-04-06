@@ -30,7 +30,7 @@ export default function Messages() {
                     )
                 })
             }
-            <div id="scroll_to_this_div" ref={lastElementRef}></div>
+            <div id="scroll_to_this_div" ref={lastElementRef} />
         </div>
     )
 }

@@ -32,7 +32,7 @@ export default function UserInfo({ user: author }) {
                     )}
                 </span>
             </div>
-            <div className="w-100"></div>
+            <div className="w-100" />
             <button
                 type="button"
                 title="Source Code"
