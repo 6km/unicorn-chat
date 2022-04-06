@@ -1,7 +1,6 @@
 import firebase from 'firebase/compat/app'
 import 'firebase/compat/auth'
 import 'firebase/compat/firestore'
-
 import { useAuthState } from 'react-firebase-hooks/auth'
 
 firebase.initializeApp({
@@ -18,40 +17,40 @@ firebase.initializeApp({
 const auth = firebase.auth();
 const firestore = firebase.firestore();
 
-const LoginWithTwitter = async () => {
+async function LoginWithTwitter() {
     const twitter_provider = new firebase.auth.TwitterAuthProvider();
     await auth.signInWithPopup(twitter_provider)
         .then(({ user }) => {
-            console.log(`Logged in successfully to ${user.displayName}!`);
+            console.log(`Logged in successfully as ${user.displayName}!`);
         })
 
         .catch(() => {
             return console.log('Login failed.');
-        })
+        });
 }
 
-const LoginWithGoogle = async () => {
+async function LoginWithGoogle() {
     const google_provider = new firebase.auth.GoogleAuthProvider();
     await auth.signInWithPopup(google_provider)
         .then(({ user }) => {
-            console.log(`Logged in successfully to ${user.displayName}!`);
+            console.log(`Logged in successfully as ${user.displayName}!`);
         })
 
         .catch(() => {
             return console.log('Login failed.');
-        })
+        });
 }
 
-const LoginWithGithub = async () => {
+async function LoginWithGithub() {
     const github_provider = new firebase.auth.GithubAuthProvider();
     await auth.signInWithPopup(github_provider)
         .then(({ user }) => {
-            console.log(`Logged in successfully to ${user.displayName}!`);
+            console.log(`Logged in successfully as ${user.displayName}!`);
         })
 
         .catch(() => {
             return console.log('Login failed.');
-        })
+        });
 }
 
 

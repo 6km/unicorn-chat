@@ -3,17 +3,15 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^11.2.7",
-    "@testing-library/user-event": "^12.8.3",
+    "@firebase/firestore": "^3.4.7",
+    "css-what": "^5.0.1",
     "firebase": "^9.0.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
     "react-firebase-hooks": "^3.0.4",
-    "react-icons": "^4.2.0",
-    "react-scripts": "4.0.3",
-    "styled-components": "^5.3.1",
-    "web-vitals": "^1.1.2"
+    "react-icons": "^4.3.1",
+    "react-scripts": "^5.0.0",
+    "styled-components": "^5.3.5"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -42,7 +40,6 @@
   },
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": " ",
-  "devDependencies": {},
   "author": "JustE3saR",
   "license": "ISC"
 }

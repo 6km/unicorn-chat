@@ -1,7 +1,16 @@
-import React from 'react';
+import React from "react"
 
-export default function Loading({isLoading}) {
-  return(
-    <div className="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
-  )
+export default function Loading() {
+	return (
+		<div className="lds-roller">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+	)
 }
