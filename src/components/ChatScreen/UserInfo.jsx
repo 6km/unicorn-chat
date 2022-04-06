@@ -16,7 +16,7 @@ justify-content: center;
 `
 
 export default function UserInfo({ user: author }) {
-    const isDev = user.uid === process.env.REACT_APP_DEV_UID;
+    const isDev = author.uid === process.env.REACT_APP_DEV_UID;
 
     return (
         <div className="user_info">
