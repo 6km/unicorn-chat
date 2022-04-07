@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@firebase/firestore": "^3.4.7",
-    "css-what": "^5.0.1",
+    "css-what": "^5.1.0",
     "firebase": "^9.0.0",
     "prop-types": "^15.8.1",
     "react": "^18.0.0",
