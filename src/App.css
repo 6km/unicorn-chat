@@ -135,7 +135,7 @@
 }
 
 .messages_container>.msg.is_current>span {
-    background-color: var(--priamry-color);
+    background-color: var(--primary-color);
 }
 
 .messages_container>.msg>.delete_msg_button {
