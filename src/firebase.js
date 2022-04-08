@@ -1,9 +1,8 @@
-import firebase from 'firebase/compat/app';
-import 'firebase/compat/auth';
-import 'firebase/compat/firestore';
-import { useAuthState } from 'react-firebase-hooks/auth';
-import { toast } from 'react-toastify';
-import { IoCheckmarkCircle } from 'react-icons/io5';
+import firebase from "firebase/compat/app"
+import "firebase/compat/auth"
+import "firebase/compat/firestore"
+import { useAuthState } from "react-firebase-hooks/auth"
+import { toast } from "react-toastify"
 
 firebase.initializeApp({
     // your app config
@@ -13,11 +12,11 @@ firebase.initializeApp({
     storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
     messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
     appId: process.env.REACT_APP_FIREBASE_APP_ID,
-    measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID
-});
+    measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID,
+})
 
-const auth = firebase.auth();
-const firestore = firebase.firestore();
+const auth = firebase.auth()
+const firestore = firebase.firestore()
 
 function successCallback(user) {
     toast(`Logged in as ${user.displayName}`, {
@@ -26,12 +25,12 @@ function successCallback(user) {
         pauseOnHover: false,
         closeButton: false,
         progressStyle: {
-            background: "var(--primary-color)"
+            background: "var(--primary-color)",
         },
         style: {
-            background: "var(--app-bg)"
-        }
-    });
+            background: "var(--app-bg)",
+        },
+    })
 }
 
 function failtureCallback(err) {
@@ -39,47 +38,49 @@ function failtureCallback(err) {
 
     switch (err.code) {
         case "auth/cancelled-popup-request":
-            errorMessage = "Popup has been cancelled due to another conflicting popup being opened"
-            break;
+            errorMessage =
+                "Popup has been cancelled due to another conflicting popup being opened"
+            break
 
         case "auth/popup-closed-by-user":
             errorMessage = "Login has been cancelled by you"
-            break;
+            break
 
         default:
-            break;
+            break
     }
 
     return toast(errorMessage, {
         theme: "colored",
         pauseOnHover: false,
         closeButton: false,
-        type: "error"
-    });
+        type: "error",
+    })
 }
 
 async function LoginWithTwitter() {
-    const twitter_provider = new firebase.auth.TwitterAuthProvider();
-    await auth.signInWithPopup(twitter_provider)
+    const twitter_provider = new firebase.auth.TwitterAuthProvider()
+    await auth
+        .signInWithPopup(twitter_provider)
         .then(({ user }) => successCallback(user))
-        .catch(failtureCallback);
+        .catch(failtureCallback)
 }
 
 async function LoginWithGoogle() {
-    const google_provider = new firebase.auth.GoogleAuthProvider();
-    await auth.signInWithPopup(google_provider)
+    const google_provider = new firebase.auth.GoogleAuthProvider()
+    await auth
+        .signInWithPopup(google_provider)
         .then(({ user }) => successCallback(user))
-        .catch(failtureCallback);
+        .catch(failtureCallback)
 }
 
 async function LoginWithGithub() {
-    const github_provider = new firebase.auth.GithubAuthProvider();
-    await auth.signInWithPopup(github_provider)
+    const github_provider = new firebase.auth.GithubAuthProvider()
+    await auth
+        .signInWithPopup(github_provider)
         .then(({ user }) => successCallback(user))
-        .catch(failtureCallback);
+        .catch(failtureCallback)
 }
-
-
 
 export {
     auth,
@@ -88,6 +89,5 @@ export {
     useAuthState,
     LoginWithTwitter,
     LoginWithGoogle,
-    LoginWithGithub
-};
-
+    LoginWithGithub,
+}

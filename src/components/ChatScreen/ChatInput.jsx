@@ -8,5 +8,5 @@ export default styled.input`
 	outline: none;
 	color: white;
 	width: -webkit-fill-available;
-    user-select: none;
+	user-select: none;
 `

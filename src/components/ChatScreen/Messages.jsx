@@ -24,7 +24,7 @@ export default function Messages() {
                             avatar={msg.avatar}
                             content={msg.content}
                             isCurrent={msg.uid === auth.currentUser.uid}
-                            uid = {msg.uid}
+                            uid={msg.uid}
                             key={msg.id}
                         />
                     )
