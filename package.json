@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "@firebase/firestore": "^3.4.7",
+    "@firebase/firestore": "^3.4.8",
     "css-what": "^5.0.1",
     "firebase": "^9.0.0",
     "prop-types": "^15.8.1",
