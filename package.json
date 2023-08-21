@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "@firebase/firestore": "^3.4.7",
+    "@firebase/firestore": "^4.1.1",
     "css-what": "^5.0.1",
-    "firebase": "^9.0.0",
+    "firebase": "^10.2.0",
     "prop-types": "^15.8.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
